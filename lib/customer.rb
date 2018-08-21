@@ -26,12 +26,12 @@ class Customer
   end
 
   def new_meal(waiter, total, tip=0)
-    Meal.new(waiter, self, total, tip)
+    Meal.new(waiter, self, total.to_f, tip.to_f)
   end
 
   def new_meal_20_percent(waiter, total)
-    tip = total * 0.2
-    Meal.new(waiter, self, total, tip)
+    tip = total.to_f * 0.2
+    Meal.new(waiter, self, total.to_f, tip.to_f)
   end
 
   def self.oldest_customer
